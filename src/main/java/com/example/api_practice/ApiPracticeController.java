@@ -13,4 +13,10 @@ public class ApiPracticeController {
     public String hello() {
         return "Hello, World!";
     }
+
+    // /goodbyeにあくせすすると Good Byeという文字列が返される関数
+    @GetMapping("/goodbye")
+    public String goodbe() {
+        return "GoodBye!";
+    }
 }
