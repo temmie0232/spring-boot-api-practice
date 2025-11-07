@@ -26,4 +26,10 @@ public class ApiPracticeController {
         return "Hello, " + name + "!";
     }
 
+    // `GET /add?a=3&b=5`のようにクエリパラメータを受け取り、合計値を返す関数
+    @GetMapping("/add")
+    public int add(@RequestParam int a, @RequestParam int b) {
+        return a + b;
+    }
+
 }
