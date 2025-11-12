@@ -32,4 +32,10 @@ public class ApiPracticeController {
         return a + b;
     }
 
+    // `GET /me`で、自身のプロフィール情報をJSONで返す関数
+    @GetMapping("/me")
+    public Profile me() {
+        return new Profile("temmie", 25);
+    }
+
 }
