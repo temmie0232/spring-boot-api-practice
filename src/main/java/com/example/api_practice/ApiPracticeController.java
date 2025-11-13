@@ -1,5 +1,8 @@
 package com.example.api_practice;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,6 +39,16 @@ public class ApiPracticeController {
     @GetMapping("/me")
     public Profile me() {
         return new Profile("temmie", 25);
+    }
+
+    // `GET /users`で、複数のユーザー情報リストをJSON配列で返す
+    @GetMapping("/users")
+    public List<Profile> users(){
+        List<Profile> userList = new ArrayList<>();
+        userList.add(new Profile("Sato", 30));
+        userList.add(new Profile("Suzuki", 28));
+        userList.add(new Profile("Takahashi", 22));
+        return userList;
     }
 
 }
